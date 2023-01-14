@@ -16,11 +16,6 @@ namespace M4HW6.Configurations
                 .WithMany(s => s.Songs)
                 .HasForeignKey(g => g.GenreId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasData(new List<Song>()
-            {
-                new Song() {},
-            });
         }
     }
 }
