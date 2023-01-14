@@ -4,6 +4,7 @@ using M4HW6;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace M4HW6.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230114125551_NewArtist")]
+    partial class NewArtist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,128 +142,6 @@ namespace M4HW6.Migrations
                     b.HasIndex("SongId");
 
                     b.ToTable("ArtistAndSong", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            ArtistAndSongId = 1,
-                            ArtistId = 1,
-                            Rate = 500m,
-                            SongId = 2,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 2,
-                            ArtistId = 2,
-                            Rate = 600m,
-                            SongId = 1,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 3,
-                            ArtistId = 4,
-                            Rate = 700m,
-                            SongId = 5,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 4,
-                            ArtistId = 3,
-                            Rate = 800m,
-                            SongId = 8,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 5,
-                            ArtistId = 5,
-                            Rate = 450m,
-                            SongId = 6,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 6,
-                            ArtistId = 6,
-                            Rate = 300m,
-                            SongId = 7,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 7,
-                            ArtistId = 1,
-                            Rate = 900m,
-                            SongId = 3,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 8,
-                            ArtistId = 3,
-                            Rate = 700m,
-                            SongId = 2,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 9,
-                            ArtistId = 1,
-                            Rate = 500m,
-                            SongId = 1,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 10,
-                            ArtistId = 5,
-                            Rate = 300m,
-                            SongId = 5,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 11,
-                            ArtistId = 6,
-                            Rate = 600m,
-                            SongId = 3,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 12,
-                            ArtistId = 4,
-                            Rate = 700m,
-                            SongId = 1,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 13,
-                            ArtistId = 3,
-                            Rate = 900m,
-                            SongId = 2,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 14,
-                            ArtistId = 1,
-                            Rate = 700m,
-                            SongId = 7,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            ArtistAndSongId = 15,
-                            ArtistId = 2,
-                            Rate = 500m,
-                            SongId = 8,
-                            StartedDate = new DateTime(2023, 1, 14, 0, 0, 0, 0, DateTimeKind.Local)
-                        });
                 });
 
             modelBuilder.Entity("M4HW6.Entities.Genre", b =>

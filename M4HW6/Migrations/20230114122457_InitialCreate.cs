@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace M4HW6.Migrations
 {
     /// <inheritdoc />
@@ -89,6 +91,19 @@ namespace M4HW6.Migrations
                         principalTable: "Song",
                         principalColumn: "SongId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Genre",
+                columns: new[] { "GenreId", "Title" },
+                values: new object[,]
+                {
+                    { 1, "folk" },
+                    { 2, "rock" },
+                    { 3, "classical" },
+                    { 4, "pop" },
+                    { 5, "jazz" },
+                    { 6, "latin" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace M4HW6.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230114115123_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230114124438_NewSong")]
+    partial class NewSong
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,6 +104,38 @@ namespace M4HW6.Migrations
                     b.HasKey("GenreId");
 
                     b.ToTable("Genre", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            GenreId = 1,
+                            Title = "folk"
+                        },
+                        new
+                        {
+                            GenreId = 2,
+                            Title = "rock"
+                        },
+                        new
+                        {
+                            GenreId = 3,
+                            Title = "classical"
+                        },
+                        new
+                        {
+                            GenreId = 4,
+                            Title = "pop"
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            Title = "jazz"
+                        },
+                        new
+                        {
+                            GenreId = 6,
+                            Title = "latin"
+                        });
                 });
 
             modelBuilder.Entity("M4HW6.Entities.Song", b =>
@@ -133,6 +165,72 @@ namespace M4HW6.Migrations
                     b.HasIndex("GenreId");
 
                     b.ToTable("Song", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            SongId = 1,
+                            Duration = 10,
+                            GenreId = 1,
+                            ReleasedDate = new DateTime(2020, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Runar"
+                        },
+                        new
+                        {
+                            SongId = 2,
+                            Duration = 4,
+                            GenreId = 1,
+                            ReleasedDate = new DateTime(2021, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Berserkir"
+                        },
+                        new
+                        {
+                            SongId = 3,
+                            Duration = 5,
+                            GenreId = 1,
+                            ReleasedDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Helfa"
+                        },
+                        new
+                        {
+                            SongId = 4,
+                            Duration = 4,
+                            GenreId = 2,
+                            ReleasedDate = new DateTime(2013, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Bury Them Deep"
+                        },
+                        new
+                        {
+                            SongId = 5,
+                            Duration = 2,
+                            GenreId = 3,
+                            ReleasedDate = new DateTime(1853, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Ave Maria"
+                        },
+                        new
+                        {
+                            SongId = 6,
+                            Duration = 6,
+                            GenreId = 4,
+                            ReleasedDate = new DateTime(2019, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Credo"
+                        },
+                        new
+                        {
+                            SongId = 7,
+                            Duration = 5,
+                            GenreId = 5,
+                            ReleasedDate = new DateTime(2011, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Ain't Got Nobody"
+                        },
+                        new
+                        {
+                            SongId = 8,
+                            Duration = 5,
+                            GenreId = 6,
+                            ReleasedDate = new DateTime(2013, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tite = "Despacito"
+                        });
                 });
 
             modelBuilder.Entity("M4HW6.Entities.ArtistAndSong", b =>
